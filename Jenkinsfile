@@ -6,11 +6,11 @@ pipeline {
         KUBE_DEPLOYMENT = "k8s-deployment.yaml"
     }
     stages {
-        stage('Checkout Code') {
-            steps {
-               git branch 'main' 'https://github.com/Fadi-Alzoubi-1/jenkins.git'
-            }
-        }
+        // stage('Checkout Code') {
+        //     steps {
+        //        git branch 'main' 'https://github.com/Fadi-Alzoubi-1/jenkins.git'
+        //     }
+        // }
         stage('Build Maven Project') {
             steps {
                 sh 'mvn clean package -DskipTests'
