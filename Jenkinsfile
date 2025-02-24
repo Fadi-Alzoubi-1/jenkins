@@ -8,7 +8,7 @@ pipeline {
     stages {
         stage('Checkout Code') {
             steps {
-               git branch 'main','https://github.com/Fadi-Alzoubi-1/jenkins.git'
+               git branch 'main' 'https://github.com/Fadi-Alzoubi-1/jenkins.git'
             }
         }
         stage('Build Maven Project') {
