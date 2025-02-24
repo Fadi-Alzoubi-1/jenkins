@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: store-service-deployment
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: store-service
+  template:
+    metadata:
+      labels:
+        app: store-service
+    spec:
+      containers:
+      - name: store-app-1
+        image: faserver/store-service:latest
+        ports:
+        - containerPort: 8080
