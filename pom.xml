@@ -128,11 +128,7 @@
     <artifactId>resilience4j-spring-boot2</artifactId>
     <version>1.7.1</version>
 </dependency>
-  <dependency>
-    <groupId>com.github.docker-java</groupId>
-    <artifactId>docker-java-api</artifactId>
-    <version>3.4.1</version>
-  </dependency>
+
 	</dependencies>
 
 	<build>
