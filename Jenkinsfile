@@ -6,11 +6,6 @@ pipeline {
         KUBE_DEPLOYMENT = "k8s-deployment.yaml"
     }
     stages {
-        stage('Build Maven Project') {
-            steps {
-                sh 'mvn clean package -DskipTests'
-            }
-        }
         stage('Build Docker Image') {
             steps {
                 sh "docker build -t ${IMAGE_NAME}:${IMAGE_TAG} ."
