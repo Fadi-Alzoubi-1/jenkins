@@ -23,7 +23,7 @@ pipeline {
         }
         stage('Push Docker Image') {
             steps {
-                withDockerRegistry([credentialsId: 'Fastserverdd@25', url: '']) {
+                withDockerRegistry([credentialsId: 'Fastserverdd@25', url: 'docker.io']) {
                     sh "docker push ${IMAGE_NAME}:${IMAGE_TAG}"
                 }
             }
