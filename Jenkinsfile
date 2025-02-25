@@ -5,17 +5,14 @@ pipeline{
 		IMAGE_TAG = "latest"
 		KUBE_DEPLOYMENT = "k8s-deployment.yaml"
 	}
-	stages {
-	    stage('Build') {
-			steps {
-				maven 'maven-4.0.0'
-				sh 'mvn clean install'
-				
-			}
-		}   
+	tools {
+			maven 'maven-4.0.0'
+		}
+	stages {  
 	    stage('Checkout Code') {
 			steps {
 				checkout scmGit(branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/Fadi-Alzoubi-1/jenkins']])
+				sh 'mvn clean install'
 			}
 		}
 		stage('Build Docker Image') {
