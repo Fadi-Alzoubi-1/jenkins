@@ -6,6 +6,11 @@ pipeline {
         KUBE_DEPLOYMENT = "k8s-deployment.yaml"
     }
     stages {
+         stage('Checkout Code') {
+            steps {
+                branch 'main','https://github.com/Fadi-Alzoubi-1/jenkins.git'
+            }
+        }
         stage('Build Docker Image') {
             steps {
                 sh "docker build -t ${IMAGE_NAME}:${IMAGE_TAG} ."
