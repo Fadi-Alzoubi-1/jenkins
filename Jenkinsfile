@@ -5,9 +5,6 @@ pipeline{
 		IMAGE_TAG = "latest"
 		KUBE_DEPLOYMENT = "k8s-deployment.yaml"
 	}
-	tools {
-			maven 'maven-4.0.0'
-		}
 	stages {  
 	    stage('Checkout Code') {
 			steps {
