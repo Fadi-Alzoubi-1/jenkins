@@ -10,6 +10,7 @@ pipeline{
 			steps {
 				withMaven(version: 'maven-4.0.0') {
 				sh 'mvn clean install'
+				}
 			}
 		}   
 	    stage('Checkout Code') {
@@ -36,5 +37,5 @@ pipeline{
 		}
 	}
 }
-}
+
 	
