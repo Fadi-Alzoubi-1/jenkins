@@ -27,7 +27,6 @@ pipeline {
                 withDockerRegistry([credentialsId: 'Fastserverdd@25', url: 'docker.io']) {
                     sh "docker push ${IMAGE_NAME}:${IMAGE_TAG}"
                 }
-            }
         }
         stage('Deploy to Kubernetes') {
             steps {
