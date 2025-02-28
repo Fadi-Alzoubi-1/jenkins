@@ -8,7 +8,6 @@ pipeline{
 	stages {  
 	    stage('Checkout Code') {
 			steps {
-				checkout scmGit(branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/Fadi-Alzoubi-1/jenkins']])
 				sh 'mvn clean install'
 			}
 		}
