@@ -1,6 +1,5 @@
 services:
-  app:
-    db:
+  db:
     image: mysql:8
     environment:
         DATABASE_HOST: store-db-1
@@ -10,6 +9,7 @@ services:
         MYSQL_DATABASE: products
     expose: 
       - 3306
+  app:
     image: faserver/store-service
     ports:
       - 8080:8080
@@ -21,7 +21,3 @@ services:
       SPRING_DATASOURCE_PASSWORD: root
     depends_on:
      - db
-
-
-
-   
