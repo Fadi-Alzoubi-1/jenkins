@@ -9,6 +9,11 @@ services:
         MYSQL_DATABASE: products
     expose: 
       - 3306
+    healthcheck:
+        test: ["CMD", "mysql", "ping", "-h", "jdbc:mysql://store-db-1:3306/products", "-u", "root", "-p", "root"]
+        interval: 10s
+        timeout: 5s
+        retries: 3
   app:
     image: faserver/store-service
     ports:
@@ -20,4 +25,5 @@ services:
       SPRING_DATASOURCE_USERNAME: root
       SPRING_DATASOURCE_PASSWORD: root
     depends_on:
-     - db
+     - db:
+         condition: service_healthy
