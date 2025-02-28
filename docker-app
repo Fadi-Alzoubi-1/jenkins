@@ -1,0 +1,11 @@
+services:
+  app:
+    image: faserver/store-service
+    ports:
+      - 8080:8080
+    expose:
+      - 8080
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:mysql://store-db-1:3306/products
+      SPRING_DATASOURCE_USERNAME: root
+      SPRING_DATASOURCE_PASSWORD: root
