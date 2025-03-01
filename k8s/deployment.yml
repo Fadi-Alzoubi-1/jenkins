@@ -13,7 +13,7 @@ spec:
         app: store-service
     spec:
       containers:
-      - name: store-app-1
+      - name: app-db-1
         image: faserver/store-service:latest
         ports:
         - containerPort: 8080
