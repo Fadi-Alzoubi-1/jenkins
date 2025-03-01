@@ -1,11 +1,11 @@
 services:
   db:
-    image: mysql:8
+    image: mysql:9
     environment:
         DATABASE_HOST: store-db-1
-        DATABASE_PORT: 3306
+        DATABASE_PORT: 3307
         SERVER_PORT: 8080
         MYSQL_ROOT_PASSWORD: root
         MYSQL_DATABASE: products
     expose: 
-      - 3306
+      - 3307
