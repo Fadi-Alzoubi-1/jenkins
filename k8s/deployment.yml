@@ -6,11 +6,11 @@ spec:
   replicas: 2
   selector:
     matchLabels:
-      app: app-1
+      app: compose2-jenkins-app-1
   template:
     metadata:
       labels:
-        app: app-1
+        app: compose2-jenkins-app-1
     spec:
       containers:
       - name: compose2-jenkins
