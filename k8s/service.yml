@@ -4,7 +4,7 @@ metadata:
   name: store-service-service
 spec:
   selector:
-    app: app-db-1
+    app: compose2-jenkins-app-1
   ports:
     - protocol: TCP
       port: 8080
