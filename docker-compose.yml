@@ -21,7 +21,7 @@ services:
     expose:
       - 8080
     environment:
-      SPRING_DATASOURCE_URL: jdbc:mysql://compose2-jenkins-jenkins:3306/products
+      SPRING_DATASOURCE_URL: jdbc:mysql://compose2-jenkins-db-1:3306/products
       SPRING_DATASOURCE_USERNAME: root
       SPRING_DATASOURCE_PASSWORD: root
     depends_on:
