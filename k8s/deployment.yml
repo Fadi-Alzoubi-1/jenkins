@@ -6,14 +6,14 @@ spec:
   replicas: 2
   selector:
     matchLabels:
-      app: compose2-jenkins-app-1
+      app: store-service
   template:
     metadata:
       labels:
-        app: compose2-jenkins-app-1
+        app: store-app-1
     spec:
       containers:
       - name: compose2-jenkins
         image: faserver/storeapi:latest
         ports:
-        - containerPort: 8080
+        - containerPort: 8082
