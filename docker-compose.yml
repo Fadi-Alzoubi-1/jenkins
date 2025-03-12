@@ -1,6 +1,7 @@
 services:
   db:
     image: mysql:8
+    container_name: jenkins
     environment:
         DATABASE_HOST: jenkins-db-1
         DATABASE_PORT: 3306
