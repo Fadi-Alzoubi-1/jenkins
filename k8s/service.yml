@@ -4,7 +4,7 @@ metadata:
   name: store-service-service
 spec:
   selector:
-    app: db-app-1
+    app: app-db-1
   ports:
     - protocol: TCP
       port: 8080
