@@ -2,28 +2,28 @@ services:
   db:
     image: mysql:8
     environment:
-        DATABASE_HOST: store-db-1
+        DATABASE_HOST: jenkins-db-1
         DATABASE_PORT: 3306
         SERVER_PORT: 8080
         MYSQL_ROOT_PASSWORD: root
         MYSQL_DATABASE: products
-    expose: 
-      - 3306
+    expose:
+     - 3308
     healthcheck:
-        test: ["CMD", "mysql", "ping", "-h", "jdbc:mysql://store-db-1:3306/products", "-u", "root", "-p", "root"]
+        test: ["CMD", "mysqladmin" ,"ping", "-h", "localhost"]
         interval: 10s
-        timeout: 5s
-        retries: 3
+        timeout: 10s
+        retries: 10
   app:
-    image: faserver/store-service
+    image: faserver/storeapi
     ports:
       - 8080:8080
     expose:
       - 8080
     environment:
-      SPRING_DATASOURCE_URL: jdbc:mysql://store-db-1:3306/products
+      SPRING_DATASOURCE_URL: jdbc:mysql://jenkins-db-1:3306/products
       SPRING_DATASOURCE_USERNAME: root
       SPRING_DATASOURCE_PASSWORD: root
     depends_on:
-     - db:
-         condition: service_healthy
+      db:
+       condition: service_healthy
